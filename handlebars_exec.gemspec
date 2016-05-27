@@ -3,9 +3,8 @@ Gem::Specification.new do |s|
   s.version     = '0.1.0'
   s.authors     = ["Anthony Fojas"]
   s.email       = "anthony.fojas@vibes.com"
-  s.homepage    = "TODO HOMEPAGE"
-  s.summary     = "TODO SUMMARY"
-  s.description = "TODO DESCRIPTION"
+  s.summary     = "Ruby bindings for Handlebars.js"
+  s.description = "Bindings for handlebars using execjs. Tested using mini_racer, therubyracer, and native nodejs"
   s.required_rubygems_version = ">= 1.3.6"
 
   s.files         = `git ls-files`.split("\n")
