@@ -26,6 +26,17 @@ module HandlebarsExec
     alias :register_helper_file :add_file_to_context
     alias :register_partial_file :add_file_to_context
 
+    def register_partial_file name, file
+      add_to_context "Handlebars.registerPartial('#{name}', #{File.read(file).strip.inspect});"
+    end
+
+    def register_helper name, function
+      add_to_context "Handlebars.registerHelper('#{name}', #{function});"
+    end
+    def register_partial name, partial 
+      add_to_context "Handlebars.registerPartial('#{name}', #{partial.inspect});"
+    end
+
     def add_to_context str
       @sources.push (str)
       if context_preserved_between_calls?
@@ -36,8 +47,6 @@ module HandlebarsExec
         @context = generate_context
       end
     end
-    alias :register_helper :add_to_context
-    alias :register_partial :add_to_context
 
     private
       def context_preserved_between_calls?

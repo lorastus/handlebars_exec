@@ -57,7 +57,7 @@ describe HandlebarsExec::Template do
     let(:partial) { 'spec/fixtures/partial.hbs' }
     let(:template_string) { "Hello {{> myPartial}}" }
     before(:context) do
-      context.register_partial_file(partial)
+      context.register_partial_file("myPartial", partial)
     end
     it "can use a partial" do
       subject.template(name: "World").must_equal "Hello World"
