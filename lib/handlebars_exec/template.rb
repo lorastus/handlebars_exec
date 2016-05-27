@@ -6,7 +6,7 @@ module HandlebarsExec
     end
 
     def template variables
-      @context.eval("Handlebars.compile('#{@template_string}')(#{variables.to_json})")
+      @context.eval("Handlebars.compile(#{@template_string.inspect})(#{variables.to_json})")
     end
   end
 end

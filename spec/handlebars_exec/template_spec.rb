@@ -12,6 +12,20 @@ describe HandlebarsExec::Template do
     end
   end
 
+  describe "a template with multiple lines" do
+    let(:template_string) do
+       <<-TEMPLATE
+          Hello {{name.last}}
+      TEMPLATE
+    end
+
+    it "allows simple subsitution" do
+      subject.template(name: { last: "World"}).must_equal <<-TEMPLATE
+          Hello World
+      TEMPLATE
+    end
+  end
+
   describe "a template with hash attributes" do
     let(:template_string) { "Hello {{name.last}}" }
 
