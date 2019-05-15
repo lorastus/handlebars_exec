@@ -16,8 +16,8 @@ module HandlebarsExec
       ExecJS.compile(sources)
     end
 
-    def compile template
-      HandlebarsExec::Template.new self.context,template 
+    def compile template, options = {}
+      HandlebarsExec::Template.new self.context, template, options
     end
 
     def add_file_to_context file
@@ -33,7 +33,7 @@ module HandlebarsExec
     def register_helper name, function
       add_to_context "Handlebars.registerHelper('#{name}', #{function});"
     end
-    def register_partial name, partial 
+    def register_partial name, partial
       add_to_context "Handlebars.registerPartial('#{name}', #{partial.inspect});"
     end
 
