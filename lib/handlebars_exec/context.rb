@@ -20,6 +20,10 @@ module HandlebarsExec
       HandlebarsExec::Template.new self.context, template, options
     end
 
+    def precompile template, options = {}
+      HandlebarsExec::Template.new self.context, template, options
+    end
+
     def add_file_to_context file
       add_to_context File.read(file)
     end

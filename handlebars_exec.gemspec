@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "handlebars_exec"
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.authors     = ["Anthony Fojas"]
   s.email       = "anthony.fojas@vibes.com"
   s.summary     = "Ruby bindings for Handlebars.js"
